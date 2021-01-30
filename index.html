@@ -1,0 +1,36 @@
+!DOCTYPE html
+<html>
+<head>
+<script type="text/python">
+"""Code for the clock"""
+
+import time
+import math
+
+from browser import document
+import browser.timer
+
+sin, cos = math.sin, math.cos
+width, height = 250, 250 # canvas dimensions
+ray = 100 # clock ray
+
+background = "#111"
+digits = "#fff"
+border = "#333"
+
+def needle(angle, r1, r2, color="#000000"):
+    """Draw a needle at specified angle in specified color.
+    r1 and r2 are percentages of clock ray.
+    """
+    x1 = width / 2 - ray * cos(angle) * r1
+    y1 = height / 2 - ray * sin(angle) * r1
+    x2 = width / 2 + ray * cos(angle) * r2
+    y2 = height / 2 + ray * sin(angle) * r2
+    ctx.beginPath()
+    ctx.strokeStyle = "#fff"
+    ctx.moveTo(x1, y1)
+    ctx.lineTo(x2, y2)
+    ctx.stroke()
+</script>
+</head>
+</html>
